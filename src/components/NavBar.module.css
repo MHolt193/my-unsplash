@@ -1,0 +1,32 @@
+.nav{
+    position: sticky;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.infoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.search{
+    height: 55px;
+    border-radius: 12px;
+    border: 1px solid #BDBDBD;
+    width: 300px;
+}
+.btn{
+    background: #3DB46D;
+    border: none;
+    border-radius: 12px;
+    height: 55px;
+    width: 137px;
+    color: white;
+    margin-right: 10%;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+}
