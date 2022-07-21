@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./NavBar.module.css";
-import { BsSearch } from "react-icons/bs";
+
 
 const NavBar = (props) => {
   return (

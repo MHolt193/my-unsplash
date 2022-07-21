@@ -1,13 +1,11 @@
 import './App.css';
-//temp
-import NavBar from './components/NavBar'
-import Masonry from './components/Masonry'
+import Home from './components/Home'
 
 function App() {
+  
   return (
     <div className="App">
-      <NavBar />
-      <Masonry />
+      <Home />
     </div>
   );
 }
