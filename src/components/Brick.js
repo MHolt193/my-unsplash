@@ -3,13 +3,13 @@ import React, {useState} from "react";
 const Brick = (props) => {
   const {id, className, imageTitle, imageUrl } = props;
 
-  const [mouseIn, setMouseIn] = useState(false);
+
 
   return (
-    <div id={id} className={className} onMouseEnter={()=>{setMouseIn(true)}}>
+    <div id={id} className={className} >
       <img src={imageUrl} alt={imageTitle} />
-      <button sytle={{display: mouseIn? 'block': "none"}}>delete</button>
-      <p sytle={{display: mouseIn? 'block': "none"}} >{imageTitle}</p>
+      <button >delete</button>
+      <p>{imageTitle}</p>
     </div>
   );
 };
