@@ -1,81 +1,88 @@
-.nav{
-    position: sticky;
-    top: 0;
-    left:0;
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.infoContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 25px;
-    gap: 30px;
+.infoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+  gap: 30px;
 }
-.search{
-    height: 55px;
-    border-radius: 12px;
-    border: 1px solid #BDBDBD;
-    width: 300px;
+.search {
+  height: 55px;
+  border-radius: 12px;
+  border: 1px solid #bdbdbd;
+  width: 300px;
+  padding-left: 50px;
+  background-image: url("https://www.svgrepo.com/show/14071/search.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 25px;
+  background-position-x: 10px;
+  
 }
-.btn{
-    background: #3DB46D;
-    border: none;
-    border-radius: 12px;
-    height: 55px;
-    width: 137px;
-    color: white;
-    margin-right: 25px;
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+.btn {
+  background: #3db46d;
+  border: none;
+  border-radius: 12px;
+  height: 55px;
+  width: 137px;
+  color: white;
+  margin-right: 25px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 }
-.logoContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.titleContainer{
-    text-align: left;
+.titleContainer {
+  text-align: left;
 }
-.title{
-    font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 800;
-font-size: 14px;
-line-height: 19px;
-color: #333333;
-margin: 0px;
-padding: 0px;
+.title {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  color: #333333;
+  margin: 0px;
+  padding: 0px;
 }
-.subtitle{
-font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 500;
-font-size: 9px;
-line-height: 12px;
-color: #333333;
-margin: 0px;
-padding: 0px;
+.subtitle {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 12px;
+  color: #333333;
+  margin: 0px;
+  padding: 0px;
 }
-.iconContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 4px;
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
 }
-.rectangleSm{
-    background: #333333;
-    border-radius: 2px;
-    height: 7px;
-    width: 7px;
+.rectangleSm {
+  background: #333333;
+  border-radius: 2px;
+  height: 7px;
+  width: 7px;
 }
-.rectangleLg{
-    height: 7px;
-    width: 22px;
-    background: #333333;
-    border-radius: 2px;
+.rectangleLg {
+  height: 7px;
+  width: 22px;
+  background: #333333;
+  border-radius: 2px;
 }

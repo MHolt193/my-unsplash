@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./NavBar.module.css";
+import { BsSearch } from "react-icons/bs";
 
 const NavBar = (props) => {
   return (
@@ -12,14 +13,13 @@ const NavBar = (props) => {
           </div>{" "}
           <div className={classes.titleContainer}>
             <p className={classes.title}>My unsplash</p>
-          <p className={classes.subtitle}>devchallenges.io</p>
+            <p className={classes.subtitle}>devchallenges.io</p>
           </div>
-          
         </div>
         <form>
           <input
-            type="text"
-            placeholder="Search By Title"
+            type="search"
+            placeholder="Search by name"
             className={classes.search}
           />
         </form>
