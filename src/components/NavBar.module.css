@@ -12,7 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    margin-left: 25px;
+    gap: 30px;
 }
 .search{
     height: 55px;
@@ -27,6 +28,54 @@
     height: 55px;
     width: 137px;
     color: white;
-    margin-right: 10%;
+    margin-right: 25px;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+}
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.titleContainer{
+    text-align: left;
+}
+.title{
+    font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 800;
+font-size: 14px;
+line-height: 19px;
+color: #333333;
+margin: 0px;
+padding: 0px;
+}
+.subtitle{
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 12px;
+color: #333333;
+margin: 0px;
+padding: 0px;
+}
+.iconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+.rectangleSm{
+    background: #333333;
+    border-radius: 2px;
+    height: 7px;
+    width: 7px;
+}
+.rectangleLg{
+    height: 7px;
+    width: 22px;
+    background: #333333;
+    border-radius: 2px;
 }
