@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 const Brick = (props) => {
   const {id, className, imageTitle, imageUrl } = props;
