@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
-import Masonry from "./Masonry";
+import Masonry from "./Masonry/Masonry";
 import NavBar from "./NavBar";
+import AddPhotos from './Modals/AddPhoto'
 
 const Home = () => {
   const [images, setImages] = useState([]);
@@ -22,6 +23,7 @@ const Home = () => {
     <>
     <NavBar />
     <Masonry images={images} />
+    <AddPhotos />
     </>
   );
 };

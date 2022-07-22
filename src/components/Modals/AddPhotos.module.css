@@ -1,0 +1,119 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+}
+.modal {
+  width: 620px;
+  height: 367px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.modal h1{
+    text-align: left;
+    margin-left: 32px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 100%;
+  margin-left: 32px;
+  text-align: left;
+  gap: 10px;
+  position: relative;
+}
+.label input[type="text"] {
+  height: 55px;
+  width: 552.33px;
+  border: 1px solid #4f4f4f;
+  filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+  border-radius: 12px;
+}
+.label input[type="file"] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+.label.upload {
+  border: 2px dashed rgb(108, 108, 180);
+  width: 50%;
+  height: 90%;
+  text-align: center;
+  background-color: rgba(168, 168, 218, 0.473);
+  border-radius: 12px;
+}
+.dropContainer {
+  height: 100%;
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.selectBtn{
+    height: 55px;
+    background-color: rgb(47, 167, 247);
+    color: white;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.selectBtn:hover{
+    background-color:rgb(40, 143, 212)
+}
+.optionsBtnContainer{
+    display: flex;
+    gap: 10px;
+}
+.btn{
+    height: 55px;
+    width: 105px;
+    border-radius: 12px;
+    border:none;
+    cursor: pointer;
+}
+.cancel{
+    background-color: rgb(253, 253, 253);
+    box-shadow: 0 2px 4px rgba(0, 0,0,0.5);
+}
+.cancel:hover{
+    background-color: rgb(255, 40, 40);
+    color: white;
+
+}
+.submit{
+    background: #3DB46D;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+.submit:hover{
+    background: #329258
+}
