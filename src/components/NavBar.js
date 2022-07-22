@@ -24,7 +24,7 @@ const NavBar = (props) => {
           />
         </form>
       </div>
-      <button type="button" className={classes.btn}>
+      <button type="button" className={classes.btn} onClick={props.imageModalHandler}>
         Add a photo
       </button>
     </nav>

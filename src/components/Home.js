@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 
 import Masonry from "./Masonry/Masonry";
 import NavBar from "./NavBar";
-import AddPhotos from './Modals/AddPhoto'
+import AddPhotos from "./Modals/AddPhoto";
 
 const Home = () => {
+  const [addImageModal, setAddImageModal] = useState(false);
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -14,16 +15,38 @@ const Home = () => {
         return data;
       })
       .then((data) => {
-        console.log(data);
         setImages(data.reverse());
       });
   }, []);
 
+  const imageModalHandler = () => {
+    setAddImageModal((prev) => !prev);
+  };
+
+  const submitPhotoHandler = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const imageFile = form.photo.files;
+    console.log(imageFile);
+
+    if (imageFile[0].type.split("/")[0] !== "image") {
+      console.log("error");
+      form.photo.labels[0].innerText = `Please this file is not a photo! Type Selected:${imageFile[0].type} `
+    } else {
+      console.log("success");
+    }
+  };
+
   return (
     <>
-    <NavBar />
-    <Masonry images={images} />
-    <AddPhotos />
+      <NavBar imageModalHandler={imageModalHandler} />
+      <Masonry images={images} />
+      {addImageModal && (
+        <AddPhotos
+          imageModalHandler={imageModalHandler}
+          submitPhotoHandler={submitPhotoHandler}
+        />
+      )}
     </>
   );
 };
