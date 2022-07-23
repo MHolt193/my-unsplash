@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useRef} from "react";
 import classes from "./AddPhotos.module.css";
 
 const AddPhotos = (props) => {
   
-  
+    const dropContainer = useRef()
     const inputChangeHandler = (e) => {
     if (e.target.files[0].type.split("/")[0] === "image") {
       const file = e.target.files[0];
@@ -12,11 +12,11 @@ const AddPhotos = (props) => {
         reader.readAsDataURL(file);
       }
       reader.onload = () => {
-        e.target.parentElement.style.background = `url(${reader.result})`;
-        e.target.parentElement.style.backgroundSize = "contain";
-        e.target.parentElement.style.backgroundRepeat = "no-repeat";
-        e.target.parentElement.style.backgroundPosition = "center";
-        e.target.parentElement.style.color = "transparent";
+        dropContainer.current.style.background = `url(${reader.result})`;
+        dropContainer.current.style.backgroundSize = "contain";
+        dropContainer.current.style.backgroundRepeat = "no-repeat";
+        dropContainer.current.style.backgroundPosition = "center";
+        dropContainer.current.style.color = "transparent";
       };
       console.log(e.target.parentElement.style);
     }
@@ -30,8 +30,9 @@ const AddPhotos = (props) => {
           Label
           <input type="text" name="photoLabel" id="photoLabel" required />
         </label>
-        <div className={classes.dropContainer}>
+        <div className={classes.dropContainer} >
           <label
+          ref={dropContainer}
             className={`${classes.label} ${classes.upload}`}
             htmlFor="photo"
           >

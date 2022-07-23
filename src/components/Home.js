@@ -21,11 +21,11 @@ const Home = () => {
     setAddImageModal((prev) => !prev);
   };
 
-  const postToCloudinary = (file) => {
+  const postToCloudinary = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", "sqlrsq0h");
-    return axios
+    return await axios
       .post("https://api.cloudinary.com/v1_1/dgxwzsvhe/image/upload", formData)
       .then((res) => {
         const data = res.data;
@@ -80,7 +80,11 @@ const Home = () => {
         imageModalHandler={imageModalHandler}
         searchHandler={searchHandler}
       />
-      <Masonry images={images} searchResults={searchResults} />
+      <Masonry
+        images={images}
+        searchResults={searchResults}
+        setImages={setImages}
+      />
       {addImageModal && (
         <AddPhotos
           imageModalHandler={imageModalHandler}

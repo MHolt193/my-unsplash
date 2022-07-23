@@ -13,6 +13,7 @@ const Masonry = (props) => {
                 imageTitle={`${item.label}`}
                 imageUrl={item.imageUrl}
                 id={item._id}
+                setImages={props.setImages}
               />
             );
           })
@@ -23,6 +24,7 @@ const Masonry = (props) => {
                 imageTitle={`${item.label}`}
                 imageUrl={item.imageUrl}
                 id={item._id}
+                setImages={props.setImages}
               />
             );
           })}
