@@ -16,11 +16,13 @@ const NavBar = (props) => {
             <p className={classes.subtitle}>devchallenges.io</p>
           </div>
         </div>
-        <form>
+        <form onSubmit={props.searchHandler}>
           <input
             type="search"
+            id="search"
             placeholder="Search by name"
             className={classes.search}
+            onChange={props.searchHandler}
           />
         </form>
       </div>

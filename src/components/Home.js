@@ -8,6 +8,7 @@ import AddPhotos from "./Modals/AddPhoto";
 const Home = () => {
   const [addImageModal, setAddImageModal] = useState(false);
   const [images, setImages] = useState([]);
+  const [searchResults, setSearchResults] = useState([])
 
   useEffect(() => {
     axios.get("http://192.168.0.57:5000/api/images").then((response) => {
@@ -63,10 +64,23 @@ const Home = () => {
     }
   };
 
+  const searchHandler = (e) => {
+    e.preventDefault();
+    setSearchResults(() => {
+      const searchResult = images.filter((image) => {
+        return image.label.match(new RegExp(e.target.value, "gi"));
+      });
+      return searchResult;
+    });
+  };
+
   return (
     <>
-      <NavBar imageModalHandler={imageModalHandler} />
-      <Masonry images={images} />
+      <NavBar
+        imageModalHandler={imageModalHandler}
+        searchHandler={searchHandler}
+      />
+      <Masonry images={images} searchResults={searchResults}/>
       {addImageModal && (
         <AddPhotos
           imageModalHandler={imageModalHandler}
