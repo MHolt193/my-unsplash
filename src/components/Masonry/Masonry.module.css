@@ -49,5 +49,10 @@
 @media  screen and (max-width: 768px) {
     .masonryContainer{
         column-count: 1;
+        margin: 110px 0px 0px 0px;
+    }
+    .item{
+        margin: 0px;
+        width: 90%;
     }
 }

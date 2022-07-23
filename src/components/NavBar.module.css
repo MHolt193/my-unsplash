@@ -88,3 +88,14 @@
   background: #333333;
   border-radius: 2px;
 }
+@media screen and (max-width: 630px){
+    .logoContainer{
+        display: none;
+    }
+    .search{
+        width: 200px;
+    }
+    .btn{
+        width: 100px;
+    }
+}

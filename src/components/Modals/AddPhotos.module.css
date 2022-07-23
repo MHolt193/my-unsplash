@@ -116,4 +116,22 @@
 }
 .submit:hover{
     background: #329258
+}@media screen and (max-width: 630px){
+    .modal{
+        width: 360px;
+        height: 500px;
+        justify-content: center;
+    }
+    .label input[type="text"] {
+        width: 80%;
+      }
+    .dropContainer{
+        flex-direction: column;
+    }
+    .buttonsContainer{
+        margin: auto;
+    }
+    .label.upload {
+        width: 80%;
+    }
 }
