@@ -8,7 +8,7 @@ import AddPhotos from "./Modals/AddPhoto";
 const Home = () => {
   const [addImageModal, setAddImageModal] = useState(false);
   const [images, setImages] = useState([]);
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     axios.get("http://192.168.0.57:5000/api/images").then((response) => {
@@ -80,7 +80,7 @@ const Home = () => {
         imageModalHandler={imageModalHandler}
         searchHandler={searchHandler}
       />
-      <Masonry images={images} searchResults={searchResults}/>
+      <Masonry images={images} searchResults={searchResults} />
       {addImageModal && (
         <AddPhotos
           imageModalHandler={imageModalHandler}
