@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./NavBar.module.css";
 
-
 const NavBar = (props) => {
   return (
     <nav className={classes.nav}>
@@ -16,7 +15,7 @@ const NavBar = (props) => {
             <p className={classes.subtitle}>devchallenges.io</p>
           </div>
         </div>
-        <form onSubmit={props.searchHandler}>
+        <form>
           <input
             type="search"
             id="search"
@@ -26,7 +25,11 @@ const NavBar = (props) => {
           />
         </form>
       </div>
-      <button type="button" className={classes.btn} onClick={props.imageModalHandler}>
+      <button
+        type="button"
+        className={classes.btn}
+        onClick={props.imageModalHandler}
+      >
         Add a photo
       </button>
     </nav>
