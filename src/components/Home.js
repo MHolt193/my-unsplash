@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 import Masonry from "./Masonry/Masonry";
 import NavBar from "./NavBar";
@@ -9,32 +10,56 @@ const Home = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.0.57:5000/api/images")
-      .then((response) => {
-        const data = response.json();
-        return data;
-      })
-      .then((data) => {
-        setImages(data.reverse());
-      });
+    axios.get("http://192.168.0.57:5000/api/images").then((response) => {
+      const data = response.data;
+      setImages(data.reverse());
+    });
   }, []);
 
   const imageModalHandler = () => {
     setAddImageModal((prev) => !prev);
   };
 
-  const submitPhotoHandler = (e) => {
+  const postToCloudinary = (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "sqlrsq0h");
+    return axios
+      .post("https://api.cloudinary.com/v1_1/dgxwzsvhe/image/upload", formData)
+      .then((res) => {
+        const data = res.data;
+        const fileUrl = data["secure_url"];
+        return fileUrl;
+      });
+  };
+
+  const submitPhotoHandler = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const imageFile = form.photo.files;
-    console.log(imageFile);
+    const imageFile = form.photo.files[0];
+    const imageLabel = form.photoLabel.value;
+    let imageUrl = "";
 
-    if (imageFile[0].type.split("/")[0] !== "image") {
-      console.log("error");
+    if (imageFile.type.split("/")[0] !== "image") {
       form.photo.labels[0].style.color = "red";
-      form.photo.labels[0].innerText = `This file is not a photo! Type Selected:${imageFile[0].type}. Please press cancel and try again `;
+      form.photo.labels[0].innerText = `This file is not a photo! Type Selected:${imageFile.type}. Please press cancel and try again `;
     } else {
-      console.log("success");
+      imageUrl = await postToCloudinary(imageFile);
+
+      const formData = {
+        label: imageLabel,
+        imageUrl: imageUrl,
+      };
+      axios
+        .post("http://192.168.0.57:5000/api/images", formData)
+        .then((res) => {
+          const data = res.data;
+          setImages((prev) => {
+            const stateCopy = [...prev];
+            return [data, ...stateCopy];
+          });
+          setAddImageModal(false);
+        });
     }
   };
 
