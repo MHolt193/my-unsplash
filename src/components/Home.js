@@ -31,7 +31,8 @@ const Home = () => {
 
     if (imageFile[0].type.split("/")[0] !== "image") {
       console.log("error");
-      form.photo.labels[0].innerText = `Please this file is not a photo! Type Selected:${imageFile[0].type} `
+      form.photo.labels[0].style.color = "red";
+      form.photo.labels[0].innerText = `This file is not a photo! Type Selected:${imageFile[0].type}. Please press cancel and try again `;
     } else {
       console.log("success");
     }

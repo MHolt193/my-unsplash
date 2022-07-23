@@ -4,17 +4,18 @@ const Brick = (props) => {
   const { id, className, imageTitle, imageUrl } = props;
   const [showDelete, setShowDelete] = useState(false);
 
-  const clickHandler = () => {
-    setShowDelete(true);
-  };
+ 
 
   return (
     <div
       id={id}
       className={className}
-      onClick={clickHandler}
+
       onMouseLeave={() => {
         setShowDelete(false);
+      }}
+      onMouseEnter={() => {
+        setShowDelete(true);
       }}
     >
       <img src={imageUrl} alt={imageTitle} />
