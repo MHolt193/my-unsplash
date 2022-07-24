@@ -27,12 +27,18 @@
   width: 63px;
   border-radius: 38px;
   margin: 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
 }
 .item p {
   position: absolute;
   bottom: 32px;
   left: 24px;
   color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
   padding: 0px;
   margin: 0px;
 }
