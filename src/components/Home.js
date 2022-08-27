@@ -11,7 +11,7 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    axios.get("http://192.168.0.57:5000/api/images").then((response) => {
+    axios.get("https://mhunsplash.herokuapp.com/api/images").then((response) => {
       const data = response.data;
       setImages(data.reverse());
     });
@@ -52,7 +52,7 @@ const Home = () => {
         imageUrl: imageUrl,
       };
       axios
-        .post("http://192.168.0.57:5000/api/images", formData)
+        .post("https://mhunsplash.herokuapp.com/api/images", formData)
         .then((res) => {
           const data = res.data;
           setImages((prev) => {
